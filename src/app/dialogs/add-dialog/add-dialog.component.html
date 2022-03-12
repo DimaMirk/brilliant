@@ -15,14 +15,14 @@
         <mat-form-field class="number">
             <button  type="button" class="plusBtn plus" (click)="toggleInputNumber()" [disabled]="secondNumber">+</button>
             <input formControlName="number"  matInput placeholder="Number"> 
-            <mat-error *ngIf="service.form.controls['number'].hasError('pattern')">Please write like +380 (00) 000 0000 or 099 000 0000 and min 8 charactors</mat-error>
+            <mat-error *ngIf="service.form.controls['number'].hasError('pattern')">Please write like 099 000 0000 and min 8 charactors</mat-error>
             <mat-error *ngIf="service.form.controls['number'].hasError('required')">This is a required field</mat-error>
         </mat-form-field>
     <ng-template [ngIf]="secondNumber">
         <mat-form-field class="second_number">
             <button  type="button" class="plusBtn plus" (click)="toggleInputNumber()">-</button>
             <input formControlName="second_number" matInput placeholder="Second number"> 
-            <mat-error *ngIf="service.form.controls['second_number'].hasError('pattern')">Please write like +380 (00) 000 0000 or 099 000 0000 and min 8 charactors</mat-error>
+            <mat-error *ngIf="service.form.controls['second_number'].hasError('pattern')">Please write like 099 000 0000 and min 8 charactors</mat-error>
         </mat-form-field>
     </ng-template>
 

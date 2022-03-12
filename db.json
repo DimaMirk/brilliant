@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "first_name": "Willie",
-      "last_name": "Moreland",
-      "number": "+33 (833) 535-9098, +33 (832) 535-9098"
-    },
-    {
       "id": 2,
       "first_name": "Ardys",
       "last_name": "Milkeham",
@@ -77,12 +71,6 @@
       "first_name": "Carmine",
       "last_name": "Boneham",
       "number": "+218 (447) 827-6316"
-    },
-    {
-      "id": 15,
-      "first_name": "Arlina",
-      "last_name": "Mullarkey",
-      "number": "+30 (345) 530-5233"
     }
   ]
 }

@@ -12,10 +12,9 @@ export class ApiService {
   }
 
   createNewUser(data: any) {
-    console.log(data)
     return this.http.post<{ [key: string]: any }>(`http://localhost:3000/users/`, data)
   }
-  
+
   deleteUser(id:number) {
     return this.http.delete(`http://localhost:3000/users/${id}`)
   }

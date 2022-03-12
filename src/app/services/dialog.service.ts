@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class DialogService {
 
   constructor(private dialog: MatDialog) { }
-  
+
   openConfirmDialog() {
 		return this.dialog.open(AddDialogComponent, {
 			width: '500px',
@@ -21,8 +21,8 @@ export class DialogService {
     id: new FormControl(null),
     first_name: new FormControl('', Validators.required), 
     last_name: new FormControl('', Validators.required),
-    number: new FormControl('', [Validators.required]),
-    second_number: new FormControl(''),
+    number: new FormControl('', [Validators.required,Validators.pattern('[()0-9]{10,17}')]),
+    second_number: new FormControl('', Validators.pattern('[- ()0-9]{10,17}')),
   })
 
   inittializeFormGroup() {
