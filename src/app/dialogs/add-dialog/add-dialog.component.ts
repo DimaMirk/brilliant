@@ -9,21 +9,28 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./add-dialog.component.scss']
 })
 export class AddDialogComponent implements OnInit {
-
+public secondNumber=false
   constructor(public service: DialogService, public apiService: ApiService, public dialogRef: MatDialogRef<AddDialogComponent>) { }
 
   ngOnInit(): void {
   }
+
   onClear() {
     this.service.form.reset()
     this.service.inittializeFormGroup()
   }
+
   onSubmit() {
       this.apiService.createNewUser({
         first_name: this.service.form.value.first_name,
         last_name: this.service.form.value.last_name,
-        number: this.service.form.value.number
+        number: this.service.form.value.number,
+        second_number:this.service.form.value.second_number
       }).subscribe(response => { this.dialogRef.close(response) })
     this.onClear()
+  }
+  
+  toggleInputNumber() {
+    this.secondNumber=!this.secondNumber
   }
 }

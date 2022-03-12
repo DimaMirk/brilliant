@@ -13,7 +13,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export class PhoneInfoComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'first_name', 'last_name', 'number','delete'];
+  displayedColumns: string[] = ['id', 'first_name', 'last_name', 'number', 'second_number','delete'];
    
 
   dataSource = new MatTableDataSource<INumbersInfo>()
@@ -26,24 +26,33 @@ export class PhoneInfoComponent implements OnInit {
   ngOnInit(): void {
   this.getNumbersInfo()
   }
+
   getNumbersInfo():void {
       this.apiServices.getInfo().subscribe(response => {
 			this.dataSource.data = response
 		})
   }
+
   openConfirmDialog() {
     this.dialog.openConfirmDialog().afterClosed().subscribe(response => {
+      this.resetForm()
       if (response) {
         Notify.success(`User ${response.first_name} has been successfully added`)
         this.dataSource.data = [...this.dataSource.data, response]
       }
     })
   }
+
   onDeleteUser(id:number) {
     this.apiServices.deleteUser(id).subscribe(response => {
       Notify.info('User was deleted')
       const filtered = this.dataSource.data.filter(element => element.id !== id)
 							this.dataSource.data = filtered
     })
+  }
+  
+  resetForm() {
+    this.dialog.form.reset()
+    this.dialog.inittializeFormGroup()
   }
   }
