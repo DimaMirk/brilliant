@@ -1,0 +1,22 @@
+.header-container{
+  padding: 20px;
+  background-color: #3F51B5;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 20px;
+}
+span{
+  margin-right: 20px;
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}

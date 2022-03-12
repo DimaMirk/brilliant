@@ -1,0 +1,21 @@
+span{
+    display:block;
+    align-items: center;
+
+
+    color: white;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    
+}
+.title-container{
+    padding: 20px;
+    background-color: #3F51B5;
+    margin-bottom: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+[mat-raised-button]:not(:last-child){
+    margin-right: 10px;
+}

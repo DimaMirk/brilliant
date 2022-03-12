@@ -1,0 +1,25 @@
+
+<div class="title-container">
+    <span>Add new user</span>
+</div>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+    <input type="hidden" formControlName="id">
+     <mat-form-field>
+         <input formControlName="first_name" matInput placeholder="First name">
+         <mat-error>This is a required field</mat-error>
+     </mat-form-field>
+      <mat-form-field>
+         <input formControlName="last_name" matInput placeholder="Last name">
+         <mat-error>This is a required field</mat-error>
+     </mat-form-field>
+      <mat-form-field>
+          <input formControlName="number" matInput placeholder="Number"> 
+          <mat-error *ngIf="service.form.controls['number'].hasError('pattern')">Please write like +380 (00) 000 0000 or 099 000 0000 and min 8 charactors</mat-error>
+          <mat-error *ngIf="service.form.controls['number'].hasError('required')">This is a required field</mat-error>
+        </mat-form-field>
+     <div class="button-row">
+         <button mat-raised-button  color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+         <button mat-raised-button color="accent" type="reset" (click)="onClear()">Clear</button>
+         <button mat-raised-button color="basic" type="button" (click)="dialogRef.close(false)">Close</button>
+     </div>
+</form> 
