@@ -17,9 +17,3 @@ jobs:
     steps:
       - name: Print Helo Message
         run: echo "Hello World from my testing" 
- 
-  my-deploy:
-   runs-on: ubuntu-latest
-   steps:
-     - name: Print Helo World 
-       run: echo "Hello world grom deploy"
