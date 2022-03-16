@@ -25,3 +25,12 @@ jobs:
     steps:
       - name: Print Helo Message
         run: echo "Hello World from my deploy"
+        
+  my-second-deploy:
+    runs-on: ubuntu-latest
+    needs: [my-deploy]
+    
+    steps:
+      - name: Print Helo Message
+        run: echo "Hello World from my second deploy"
+
