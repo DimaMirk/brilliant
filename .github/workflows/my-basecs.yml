@@ -25,6 +25,11 @@ jobs:
     steps:
       - name: Print Helo Message
         run: echo "Hello World from my deploy"
+      - name: Start few command
+        run: |
+          echo "Hello World one"
+          echo "Hello World two"
+          echo "Hello World three"
         
   my-second-deploy:
     runs-on: ubuntu-latest
@@ -32,5 +37,5 @@ jobs:
     
     steps:
       - name: Print Helo Message
-        run: echo "Hello World from my second deplo aaay"
+        run: echo "Second"
 
